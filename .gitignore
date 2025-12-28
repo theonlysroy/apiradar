@@ -9,8 +9,12 @@ wheels/
 # Virtual environments
 .venv
 
+# Ruff cache
+.ruff*
+
 # Zed settings
 .zed/
+.vscode/
 
 # Env files
 .env
