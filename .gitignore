@@ -9,10 +9,13 @@ wheels/
 # Virtual environments
 .venv
 
-# Zed settings
+# Editor settings
 .zed/
+.vscode/
 
 # Env files
 .env
 .env.prod*
 .env.local
+
+_proto/data/route.json

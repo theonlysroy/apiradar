@@ -1,4 +1,16 @@
-fastapi
+fastapi[standard]
+uvicorn
 pydantic
 pydantic-settings
 streamlit
+pyyaml
+agno
+openai
+google-genai
+python-dotenv
+openapi3-parser
+
+# dev
+ruff
+black
+isort
