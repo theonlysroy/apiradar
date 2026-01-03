@@ -4,13 +4,16 @@ pydantic
 pydantic-settings
 streamlit
 pyyaml
+pyaml
 agno
 openai
 google-genai
 python-dotenv
 openapi3-parser
 
+
 # dev
+ipywidgets
 ruff
 black
 isort

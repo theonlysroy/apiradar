@@ -1,0 +1,200 @@
+openapi: "3.0.3"
+info:
+  title: "Example API"
+  description: "REST API documentation generated from JSON examples"
+  version: "1.0.0"
+servers:
+  - url: "https://api.example.com"
+    description: "Production server"
+paths:
+  /users:
+    get:
+      summary: "GET /users"
+      description: "GET operation for /users"
+      parameters:
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExampleAPI"
+        400:
+          description: "Bad request"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal server error"
+    post:
+      summary: "POST /users"
+      description: "POST operation for /users"
+      parameters:
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExampleAPI"
+        400:
+          description: "Bad request"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal server error"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExampleAPI"
+  /users/{id}:
+    get:
+      summary: "GET /users/{id}"
+      description: "GET operation for /users/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+          description: "id parameter"
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExampleAPI"
+        400:
+          description: "Bad request"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal server error"
+    put:
+      summary: "PUT /users/{id}"
+      description: "PUT operation for /users/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+          description: "id parameter"
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExampleAPI"
+        400:
+          description: "Bad request"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal server error"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ExampleAPI"
+    delete:
+      summary: "DELETE /users/{id}"
+      description: "DELETE operation for /users/{id}"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+          description: "id parameter"
+      responses:
+        200:
+          description: "Successful response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExampleAPI"
+        400:
+          description: "Bad request"
+        404:
+          description: "Not found"
+        500:
+          description: "Internal server error"
+components:
+  schemas:
+    ExampleAPI:
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+        name:
+          type: "string"
+        email:
+          type: "string"
+          format: "email"
+        age:
+          type: "integer"
+        address:
+          type: "object"
+          properties:
+            street:
+              type: "string"
+            city:
+              type: "string"
+            zipcode:
+              type: "string"
+            country:
+              type: "string"
+          required:
+            - street
+            - city
+            - zipcode
+            - country
+        interests:
+          type: "array"
+          items:
+            type: "string"
+        created_at:
+          type: "string"
+          format: "date-time"
+        updated_at:
+          type: "string"
+          format: "date-time"
+        active:
+          type: "boolean"
+        profile:
+          type: "object"
+          properties:
+            bio:
+              type: "string"
+            website:
+              type: "string"
+            social:
+              type: "object"
+              properties:
+                twitter:
+                  type: "string"
+                github:
+                  type: "string"
+              required:
+                - twitter
+                - github
+          required:
+            - bio
+            - website
+            - social
+      required:
+        - id
+        - name
+        - email
+        - age
+        - address
+        - interests
+        - created_at
+        - updated_at
+        - active
+        - profile
